@@ -1,8 +1,9 @@
 import { Card, Select, Form, Input, Button, DatePicker, Switch } from "antd";
 import { useContext, useState } from "react";
-import { DataContext } from "../services/DataService";
+import { DataContext } from "../../services/DataService";
 import { useFirestore, useUser } from "reactfire";
 import { useHistory } from "react-router";
+import { CardExtra } from "../../components/CardExtra";
 
 export const NewRegistration = () => {
   const user = useUser();
@@ -54,7 +55,7 @@ export const NewRegistration = () => {
 
   return (
     <div>
-      <Card title="Registration Form">
+      <Card title="Registration Form" extra={<CardExtra />}>
         <Form
           name="registration form"
           labelCol={{ span: 8 }}

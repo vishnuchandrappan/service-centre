@@ -14,8 +14,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
 import { ROLES } from "../../utils/constants";
-import { Link } from "react-router-dom";
-import { ArrowLeftOutlined } from "@ant-design/icons";
+import { CardExtra } from "../../components/CardExtra";
 
 const RowCard = ({ title, value }) => {
   return (
@@ -91,13 +90,7 @@ export const Registration = () => {
       {loading && <Spin />}
       <Card
         title={`Reference number : ${value?.referenceNumber}`}
-        extra={
-          <Link to="/registrations">
-            <Button type="primary">
-              <ArrowLeftOutlined /> Registrations
-            </Button>
-          </Link>
-        }
+        extra={<CardExtra title="Registrations" path="/registrations" />}
       >
         <h3>{value?.id}</h3>
         <Row>

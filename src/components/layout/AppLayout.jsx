@@ -29,13 +29,13 @@ export const AppLayout = ({ children }) => {
           <Menu.Item key="1" icon={<UserOutlined />}>
             <Link to="/">Dashboard</Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<PlusOutlined />}>
-            <Link to="/newRegistration">New Registration</Link>
+          <Menu.Item key="2" icon={<PlusOutlined />}>
+            <Link to="/registrations/new">New Registration</Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-            Employee Management
+          <Menu.Item key="3" icon={<VideoCameraOutlined />}>
+            <Link to="/employees">Employee Management</Link>
           </Menu.Item>
-          <Menu.Item key="5" icon={<VideoCameraOutlined />}>
+          <Menu.Item key="4" icon={<VideoCameraOutlined />}>
             <Link to="/registrations">Registrations</Link>
           </Menu.Item>
         </Menu>

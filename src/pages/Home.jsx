@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CustomCard = ({ path, title }) => {
   return (
-    <Col span={8}>
+    <Col sm={24} md={11} lg={7} style={{ minHeight: "4em" }}>
       <Link to={path}>
         <Card hoverable className="flex-center">
           <h3>{title}</h3>
@@ -13,12 +13,29 @@ const CustomCard = ({ path, title }) => {
   );
 };
 
+const cards = [
+  {
+    path: "/registrations",
+    title: "Registrations",
+  },
+  {
+    path: "/registrations/new",
+    title: "New Registration",
+  },
+  {
+    path: "/employees",
+    title: "Employee management",
+  },
+];
+
 export const Home = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <Row>
-        <CustomCard title={"Registrations"} path={"/registrations"} />
+      <Row justify="space-between">
+        {cards.map((card) => (
+          <CustomCard {...card} key={card.title} />
+        ))}
       </Row>
     </div>
   );
