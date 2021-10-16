@@ -2,8 +2,8 @@ import { Button, Card, Input, Form, Checkbox } from "antd";
 
 const Login = ({ handleSubmit }) => {
   return (
-    <div className="container">
-      <h1>Login</h1>
+    <div className="login-container loading">
+      <h1 className="login-text">Login</h1>
       <Card>
         <Form
           name="login-form"

@@ -4,10 +4,11 @@ import {
   MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
-  UploadOutlined,
+  PlusOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
 import { createElement } from "react";
+import { Link } from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
 
@@ -26,18 +27,30 @@ export const AppLayout = ({ children }) => {
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1" icon={<UserOutlined />}>
-            Dashboard
+            <Link to="/">Dashboard</Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<UploadOutlined />}>
-            Quick Find Item
+          <Menu.Item key="3" icon={<PlusOutlined />}>
+            <Link to="/newRegistration">New Registration</Link>
           </Menu.Item>
           <Menu.Item key="2" icon={<VideoCameraOutlined />}>
             Employee Management
           </Menu.Item>
+          <Menu.Item key="5" icon={<VideoCameraOutlined />}>
+            <Link to="/registrations">Registrations</Link>
+          </Menu.Item>
         </Menu>
       </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
+      <Layout
+        className="site-layout"
+        style={{
+          maxHeight: "100vh",
+          overflow: "scroll",
+        }}
+      >
+        <Header
+          className="site-layout-background"
+          style={{ padding: 0, position: "sticky", top: 0, zIndex: 10 }}
+        >
           {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: "trigger",
             onClick: toggle,
