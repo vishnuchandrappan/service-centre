@@ -25,7 +25,7 @@ export const Routes = () => {
         path="/registrations/:referenceNumber"
         component={Registration}
       />
-      <ProtectedRoute path="/employees" component={Employees} />
+      <ProtectedRoute path="/employees" exact component={Employees} />
       <Route>
         <AppLayout>
           <div>404</div>

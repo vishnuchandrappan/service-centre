@@ -51,7 +51,7 @@ export const NewRegistration = () => {
     setSelectedItem(value);
   };
 
-  const initialValues = { referenceNumber: Date.now(), item: "1" };
+  const initialValues = { referenceNumber: Date.now(), item: "Mobile" };
 
   return (
     <div>
